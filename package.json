@@ -1,0 +1,46 @@
+{
+  "name": "chatter",
+  "version": "1.0.0",
+  "description": "A real-time chat application",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "client-install": "npm i --prefix frontend",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pranav5956/Chatter-Application.git"
+  },
+  "keywords": [
+    "real-time",
+    "chat",
+    "chatter",
+    "chatapp"
+  ],
+  "author": "Pranav Balaji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pranav5956/Chatter-Application/issues"
+  },
+  "homepage": "https://github.com/Pranav5956/Chatter-Application#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "email-verifier-node": "0.0.2",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.4",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  },
+  "proxy": "http://localhost:5000"
+}

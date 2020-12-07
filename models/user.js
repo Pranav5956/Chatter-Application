@@ -10,10 +10,6 @@ const userModel = new mongoose.Schema(
     password: {
       type: String,
     },
-    googleId: {
-      type: String,
-      unique: true,
-    },
     firstName: {
       type: String,
     },

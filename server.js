@@ -2,11 +2,12 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import path from "path";
+import passport from "passport";
+dotenv.config();
 
 import "./passport/config.js";
-import authRoute from "./routes/auth.js";
-
-dotenv.config();
+import localAuthRoute from "./routes/auth/local.js";
+import usersApiRoute from "./routes/api/user.js";
 
 const app = express();
 
@@ -14,7 +15,12 @@ const app = express();
 app.use(express.json());
 
 // Routes
-app.use("/auth", authRoute);
+app.use("/auth/local", localAuthRoute);
+app.use(
+  "/api",
+  passport.authenticate("jwt", { session: false }),
+  usersApiRoute
+);
 
 // Connect to MongoDB
 mongoose
